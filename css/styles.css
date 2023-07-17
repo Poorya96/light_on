@@ -54,14 +54,17 @@ html{
     color: #fff;
   }
   .nav__logo{
-    width: 160px;
+    width: 130px;
     cursor: pointer;
   }
   
   .nav__icon{
-    width: 25px;
+    width: 30px;
     transition: box-shadow .15s;
     cursor: pointer;
+    float: right;
+    
+    
   }
   
   .nav.collapsible--expanded .nav__icon{
@@ -85,6 +88,10 @@ html{
      .nav__item{
       border: 0;
      }
+     .nav__logo{
+        width: 160px;
+       
+      }
   }
 
   /* Links */
@@ -108,21 +115,6 @@ a{
 
 
 
-
-/* Icons */
-
-.icon {
-    width: 40px;
-    height: 40px;
-  }
-  
-      
-  .icon--white {
-    fill: #fff;
-  }
-  
- 
-  
   /* Buttons */
   
   .list_button{
@@ -135,6 +127,7 @@ a{
     margin-left: 10px;
     cursor: pointer;
     padding: 0;
+    display: none;
     }
     .list_button span{
         display: block;
@@ -151,13 +144,18 @@ a{
        margin-left: 33px;
        transition: background 0.5s,  margin-left 0.5s ;
     }
+    @media screen and (min-width: 768px) {
+        .list_button{
+            display: block;
+        } 
+    }
 
     /* lamp-container */
     .lamp-container{
         position: absolute;
-        top: -20px;
-        left: 22%;
-        width: 200px;
+        top: -30px;
+        left: 35%;
+        width: 130px;
     }
     .lamp{
         width: 100%;
@@ -168,8 +166,8 @@ a{
         top: 97%;
         left: 45%;
         transform: translateX(-50%);
-        width: 700px;
-        height: 50vh;
+        width: 500px;
+        height: 35vh;
         opacity: 0;
         transition: opacity 0.5s;
     }
@@ -178,19 +176,35 @@ a{
       transition: opacity 0.5s;
     }
 
+    @media screen and (min-width: 768px) {
+        .lamp-container{
+         
+            top: -20px;
+            left: 22%;
+            width: 200px;
+        }
+        
+        .lamp_light{
+            
+            width: 700px;
+            height: 50vh;
+            
+        }
+    }
+
     /* Text-container */
     .Text-container{
-        max-width: 600px;
-        margin-top: 7%;
-        margin-left: 50%;
+        max-width: 400px;
+        margin-top: 45%;
+        margin-left: 10%;
     }
 
     .Text-container h1{
-        font-size: 5rem;
-        font-weight: 400;
+        font-size: 4rem;
+        font-weight: 300;
     }
     .Text-container p{
-        font-size: 2rem;    
+        font-size: 1.5rem;    
     }
     .Text-container a{
         text-decoration: none;
@@ -198,34 +212,68 @@ a{
         padding: 14px 14px ;
         display: inline-block;
         color: var(--color-text);
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin-top: 10px;
         border-radius: 30px;
     }
+    @media screen and (min-width: 768px) {
+        .Text-container{
+            max-width: 600px;
+            margin-top: 7%;
+            margin-left: 50%;
+        }
+    
+        .Text-container h1{
+            font-size: 5rem;
+            font-weight: 400;
+        }
+        .Text-container p{
+            font-size: 2rem;    
+        }
+        .Text-container a{
+           font-size: 2rem;
+          
+        }
+    }
+
 
     /* control */
     .control{
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        margin-top: 100px;
+        margin-top: 40px;
     }
     .line{
-        width: 250px;
+        width: 200px;
         height: 4px;
         background-color: var(--color-background-white);
         margin: 0 20px;
         border-radius: 2px;
     }
     .line span{
-        width: 200px;
+        width: 150px;
         height: 4px;
         background-color: var(--color-background-mainbutton);
         border-radius: 2px;
         display: block;
     }
- 
-  /* collapsibles
+    @media screen and (min-width: 768px) {
+        .control{
+            
+            margin-top: 100px;
+        }
+        .line{
+            width: 250px;
+            
+        }
+        .line span{
+            width: 200px;     
+        }
+    }
+
+  /* collapsibles */
+
 .collapsible__header{
     display: flex;
     justify-content: space-between ;
@@ -255,4 +303,4 @@ a{
   .collapsible--expanded .collapsible__content{
     max-height:fit-content;
     opacity: 1;
-  } */
+  } 
