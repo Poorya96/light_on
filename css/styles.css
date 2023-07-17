@@ -134,6 +134,7 @@ a{
     outline: 0;
     margin-left: 10px;
     cursor: pointer;
+    padding: 0;
     }
     .list_button span{
         display: block;
@@ -141,8 +142,14 @@ a{
         height: 26px;
         width: 26px;
         border-radius:50%;
-        padding: 0;
-        margin-left: 0.2px;
+        margin-left: 2px;
+        transition: background 0.5s,  margin-left 0.5s ;
+    }
+
+    .active span{
+       background: var(--color-background-mainbutton);
+       margin-left: 33px;
+       transition: background 0.5s,  margin-left 0.5s ;
     }
 
     /* lamp-container */
@@ -154,6 +161,7 @@ a{
     }
     .lamp{
         width: 100%;
+        cursor: pointer;
     }
     .lamp_light{
         position: absolute;
@@ -162,7 +170,12 @@ a{
         transform: translateX(-50%);
         width: 700px;
         height: 50vh;
-        
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    .light_on{
+      opacity: 1;  
+      transition: opacity 0.5s;
     }
 
     /* Text-container */

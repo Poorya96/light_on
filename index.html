@@ -22,13 +22,21 @@
             <li class="nav__item">
               <a href="#">Affordable</a>
             </li>
-            <button type="button" class="list_button"><span></span></button>
+
+            <button
+              type="button"
+              class="list_button"
+              onclick="toggleBtn()"
+              id="btn"
+            >
+              <span></span>
+            </button>
           </ul>
         </div>
       </nav>
       <div class="lamp-container">
-        <img class="lamp" src="/images/lamp.png" alt="" />
-        <img class="lamp_light" src="/images/light.png" alt="" />
+        <img class="lamp" src="/images/lamp.png" alt="" onclick="toggleBtn()" />
+        <img class="lamp_light" src="/images/light.png" alt="" id="light" />
       </div>
 
       <div class="Text-container">
