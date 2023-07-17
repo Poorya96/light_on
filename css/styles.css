@@ -1,9 +1,13 @@
 :root{
     --color-background: #1d2026;
     --color-text:#fff;
+    --color-background-button:#efefef;
+    --color-background-span:#999;
     }
 
-
+html{
+        font-size: 62.5%; 
+     }
 
 .background{
     background-color: var(--color-background);
@@ -12,3 +16,157 @@
     color: var(--color-text);
     position: relative;
 }
+
+/* navigation bar */
+.nav{
+    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    align-items: center;
+  }
+  
+  .nav__list{
+    width: 100%;
+    margin: 0;
+  }
+  
+  .nav__item{
+    padding:0.5rem 2rem;
+    border-bottom: 1px solid #222;
+    
+  }
+  
+  .nav__item> a{
+    color: #d2d0d2;
+    transition: color 0.3s;
+   
+  }
+  
+  .nav__item> a:hover{
+    color: #fff;
+  }
+  .nav__logo{
+    width: 160px;
+    cursor: pointer;
+  }
+  
+  .nav__icon{
+    width: 25px;
+    transition: box-shadow .15s;
+    cursor: pointer;
+  }
+  
+  .nav.collapsible--expanded .nav__icon{
+    opacity: 1;
+    box-shadow: 0 0 0 3px #666;
+    border-radius: 5px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .nav__icon{
+      display: none;
+    }
+     .nav__list{
+      width: auto;
+      display: flex;
+      font-size: 1.6rem;
+      max-height: 100%;
+      opacity: 1;
+     }
+  
+     .nav__item{
+      border: 0;
+     }
+  }
+
+  /* Links */
+a{
+    text-decoration: none;
+    font-size: 1.7rem;
+}
+
+
+/* lists */
+.nav__list{
+    flex: 1;
+    text-align: right;
+    padding-left: 0;
+    margin-top: 15px;
+}
+.nav__item{
+    display: inline-block;
+    list-style: none;
+}
+
+
+
+
+/* Icons */
+
+.icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+      
+  .icon--white {
+    fill: #fff;
+  }
+  
+ 
+  
+  /* Buttons */
+  
+  .list_button{
+    background-color: var(--color-background-button);
+    height: 30px;
+    width: 60px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    margin-left: 10px;
+    cursor: pointer;
+    }
+    .list_button span{
+        display: block;
+        background: var(--color-background-span);
+        height: 26px;
+        width: 26px;
+        border-radius:50%;
+        padding: 0;
+        margin-left: 0.2px;
+    }
+ 
+  /* collapsibles
+.collapsible__header{
+    display: flex;
+    justify-content: space-between ;
+  }
+  .collapsible__heading{
+    margin-top: 0;
+    font-size: 3rem;
+    color: #fff;
+  }
+  .collapsible__chevron{
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+  
+  }
+  .collapsible__content{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+    color: #b8b8b8;
+  }
+  
+  .collapsible--expanded .collapsible__chevron{
+    transform: rotate(0);
+  }
+  
+  .collapsible--expanded .collapsible__content{
+    max-height:fit-content;
+    opacity: 1;
+  } */
