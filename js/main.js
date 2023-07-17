@@ -1,14 +1,12 @@
-const btn = document.getElementById('btn');
-
 function toggleBtn() {
   btn.classList.toggle("active");
-  light.classList.toggle("light_on");
+  light.classList.toggle("light_off");
 
 }
 
-// const collapsibles = document.querySelectorAll(".collapsible");
-// collapsibles.forEach((item) =>
-//   item.addEventListener("click", function () {
-//     this.classList.toggle("collapsible--expanded");
-//   })
-// );
+function toggle_collapsible() {
+  collapsible__content.classList.toggle("collapsible_expanded");
+  lampe_expanded.classList.toggle("lampe_expanded");
+
+}
+

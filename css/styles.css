@@ -1,6 +1,7 @@
 :root{
     --color-background: #1d2026;
     --color-background-white: #fff;
+    --color-background-nav: #121212;
     --color-text:#fff;
     --color-background-button:#efefef;
     --color-background-span:#999;
@@ -9,39 +10,38 @@
 
 html{
         font-size: 62.5%; 
-        margin: 0; height: 100%; overflow: hidden;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        
      }
 
-.background{
+body{
     background-color: var(--color-background);
     min-height: 100vh;
     width: 100%;
     color: var(--color-text);
     position: relative;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    @media screen and (min-width: 768px) {
+        margin: 0; height: 100%; overflow: hidden;
+    }
 }
 
 /* navigation bar */
-.nav{
-    
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 0 1rem;
-    align-items: center;
-    padding-top: 10px;
-  }
-  
   .nav__list{
-    width: 100%;
-    margin: 0;
+    position: relative;
+    align-items: center;
+    background-color:var(--color-background-nav);
+    margin-top: 5px;
+    z-index: 1;
+    display: none;
+    animation: fade-in 600ms forwards;
   }
+
+
   
   .nav__item{
-    padding:0.5rem 2rem;
-    border-bottom: 1px solid #222;
-    
+    text-align: center;
+    list-style: none;
+    padding:1rem 2rem;
+    font-size: 2rem;
   }
   
   .nav__item> a{
@@ -56,33 +56,41 @@ html{
   .nav__logo{
     width: 130px;
     cursor: pointer;
+    margin-left: 10px;
+    
   }
   
   .nav__icon{
+    position: absolute;
+    top:10px;
+    right:10px;
     width: 30px;
     transition: box-shadow .15s;
     cursor: pointer;
-    float: right;
-    
     
   }
   
-  .nav.collapsible--expanded .nav__icon{
-    opacity: 1;
-    box-shadow: 0 0 0 3px #666;
-    border-radius: 5px;
-  }
-  
-  @media screen and (min-width: 768px) {
+ 
+ @media screen and (min-width: 768px) {
     .nav__icon{
       display: none;
     }
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0 1rem;
+        align-items: center;
+        padding-top: 10px;
+      }
+
      .nav__list{
       width: auto;
       display: flex;
       font-size: 1.6rem;
       max-height: 100%;
       opacity: 1;
+      background: none;
      }
   
      .nav__item{
@@ -92,28 +100,14 @@ html{
         width: 160px;
        
       }
-  }
 
+    }
+      
   /* Links */
 a{
     text-decoration: none;
     font-size: 1.7rem;
 }
-
-
-/* lists */
-.nav__list{
-    flex: 1;
-    text-align: right;
-    padding-left: 0;
-    
-}
-.nav__item{
-    display: inline-block;
-    list-style: none;
-}
-
-
 
   /* Buttons */
   
@@ -131,17 +125,17 @@ a{
     }
     .list_button span{
         display: block;
-        background: var(--color-background-span);
+        background: var(--color-background-mainbutton);
         height: 26px;
         width: 26px;
         border-radius:50%;
-        margin-left: 2px;
+        margin-left: 33px;
         transition: background 0.5s,  margin-left 0.5s ;
     }
 
     .active span{
-       background: var(--color-background-mainbutton);
-       margin-left: 33px;
+       background: var(--color-background-span);
+       margin-left: 2px;
        transition: background 0.5s,  margin-left 0.5s ;
     }
     @media screen and (min-width: 768px) {
@@ -156,6 +150,7 @@ a{
         top: -30px;
         left: 35%;
         width: 130px;
+        transition: top 0.5s;
     }
     .lamp{
         width: 100%;
@@ -168,11 +163,11 @@ a{
         transform: translateX(-50%);
         width: 500px;
         height: 35vh;
-        opacity: 0;
+        opacity: 1;
         transition: opacity 0.5s;
     }
-    .light_on{
-      opacity: 1;  
+    .light_off{
+      opacity: 0;  
       transition: opacity 0.5s;
     }
 
@@ -215,6 +210,7 @@ a{
         font-size: 1.5rem;
         margin-top: 10px;
         border-radius: 30px;
+        margin-bottom: 10px;
     }
     @media screen and (min-width: 768px) {
         .Text-container{
@@ -238,11 +234,13 @@ a{
 
 
     /* control */
-    .control{
+    /* .control{
         display: flex;
         align-items: center;
         justify-content: flex-end;
         margin-top: 40px;
+        margin-bottom: 100px;
+        margin-right: 10px;
     }
     .line{
         width: 200px;
@@ -270,37 +268,26 @@ a{
         .line span{
             width: 200px;     
         }
-    }
+    } */
 
   /* collapsibles */
-
-.collapsible__header{
-    display: flex;
-    justify-content: space-between ;
+  .collapsible_expanded{
+    display: block;
+    
   }
-  .collapsible__heading{
-    margin-top: 0;
-    font-size: 3rem;
-    color: #fff;
+  .lampe_expanded{
+    position: absolute;
+    top: 150px;
+    transition: top 0.5s;
   }
-  .collapsible__chevron{
-    transform: rotate(-90deg);
-    transition: transform 0.3s;
+  @media screen and (min-width: 768px) {
   
-  }
-  .collapsible__content{
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 0.3s;
-    color: #b8b8b8;
-  }
-  
-  .collapsible--expanded .collapsible__chevron{
-    transform: rotate(0);
-  }
-  
-  .collapsible--expanded .collapsible__content{
-    max-height:fit-content;
-    opacity: 1;
-  } 
+     .collapsible_expanded{
+      
+      display: flex;
+     }
+     .lampe_expanded{
+        position: absolute;
+        top: -35px;
+    }
+}
