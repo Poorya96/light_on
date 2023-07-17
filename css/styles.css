@@ -1,5 +1,6 @@
 :root{
     --color-background: #1d2026;
+    --color-background-white: #fff;
     --color-text:#fff;
     --color-background-button:#efefef;
     --color-background-span:#999;
@@ -187,6 +188,28 @@ a{
         font-size: 2rem;
         margin-top: 10px;
         border-radius: 30px;
+    }
+
+    /* control */
+    .control{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 100px;
+    }
+    .line{
+        width: 250px;
+        height: 4px;
+        background-color: var(--color-background-white);
+        margin: 0 20px;
+        border-radius: 2px;
+    }
+    .line span{
+        width: 200px;
+        height: 4px;
+        background-color: var(--color-background-mainbutton);
+        border-radius: 2px;
+        display: block;
     }
  
   /* collapsibles
