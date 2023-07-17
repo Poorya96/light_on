@@ -139,6 +139,26 @@ a{
         padding: 0;
         margin-left: 0.2px;
     }
+
+    /* lamp-container */
+    .lamp-container{
+        position: absolute;
+        top: -20px;
+        left: 22%;
+        width: 200px;
+    }
+    .lamp{
+        width: 100%;
+    }
+    .lamp_light{
+        position: absolute;
+        top: 97%;
+        left: 45%;
+        transform: translateX(-50%);
+        width: 700px;
+        height: 50vh;
+        
+    }
  
   /* collapsibles
 .collapsible__header{
